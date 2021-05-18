@@ -56,8 +56,60 @@ input {
     opacity: 0.5;
 }
 
+.todo {
+    width: 500px;
+    background: #272636;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    transition: 0.5s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.todo p {
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.todo button {
+    border: none;
+    outline: none;
+    margin-right: 20px;
+    background: none;
+    color: #FE4343;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.todo:hover {
+    border: 2px solid #6F6FC8;
+}
+
 @media (max-width: 550px){
     .input {
-        width: 100%;
+        width: 90vw;
     }
+    .todo{
+        width: 90vw;
+    }
+}
+
+.checkbox {
+    margin-left: 20px;
+    -webkit-appearance: none;
+	background-color: none;
+	border: 1px solid #6F6FC8;
+	padding: 9px;
+	border-radius: 3px;
+	display: inline-block;
+	position: relative;
+    overflow: none;
+}
+
+.checkbox:checked{
+    background-color: #6F6FC8;
 }

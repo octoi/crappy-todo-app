@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
+import Todo from './Todo';
 
 function App() {
     const [todos, setTodos] = useState([]);
@@ -26,6 +27,11 @@ function App() {
                     placeholder="To do ??"
                 />
                 <button><i class="fas fa-plus"></i></button>
+            </div>
+            <div style={{ marginTop: "30px" }}>
+                <Todo />
+                <Todo />
+                <Todo />
             </div>
         </div>
     );
