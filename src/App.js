@@ -50,7 +50,7 @@ function App() {
                 setTodos(JSON.parse(savedTodos))
             }
         }
-    }, [todos])
+    }, [todos, isListEmpty])
 
 
     return (
