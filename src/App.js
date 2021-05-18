@@ -22,12 +22,8 @@ function App() {
     }
 
     const deleteTodo = (id) => {
-        let newTodos = [];
-        todos.forEach(todoItem => {
-            if (todoItem.id !== id) {
-                newTodos.push(todoItem)
-            }
-        });
+        let newTodos = todos;
+        newTodos.filter(todoItem => todoItem.id !== id);
 
         if (newTodos.length === 0) setIsListEmpty(true)
         setTodos(newTodos)
