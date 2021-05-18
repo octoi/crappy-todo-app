@@ -19,11 +19,14 @@ function App() {
     return (
         <div className="App">
             <h1>Todo App</h1>
-            <input
-                value={todo}
-                onChange={(e) => setTodo(e.target.value)}
-                placeholder="To do ??"
-            />
+            <div className="input">
+                <input
+                    value={todo}
+                    onChange={(e) => setTodo(e.target.value)}
+                    placeholder="To do ??"
+                />
+                <button><i class="fas fa-plus"></i></button>
+            </div>
         </div>
     );
 }
