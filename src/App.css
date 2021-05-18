@@ -113,3 +113,34 @@ input {
 .checkbox:checked{
     background-color: #6F6FC8;
 }
+
+.options {
+    margin-top: 30px;
+}
+
+.options button {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border: 2px solid #6F6FC8;
+    background: none;
+    color: #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.5s;
+}
+
+.options button:hover {
+    background: #6F6FC8;
+    opacity: 0.5;
+}
+
+.selected-btn {
+    background: #6F6FC8;
+}
+
+.completed-task {
+    text-decoration: line-through;
+}

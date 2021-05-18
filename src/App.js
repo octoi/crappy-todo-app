@@ -28,6 +28,11 @@ function App() {
                 />
                 <button><i class="fas fa-plus"></i></button>
             </div>
+            <div className="options">
+                <button>All</button>
+                <button>Completed</button>
+                <button>Todo</button>
+            </div>
             <div style={{ marginTop: "30px" }}>
                 <Todo />
                 <Todo />
