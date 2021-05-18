@@ -1,13 +1,11 @@
-import React from 'react'
-
-export default function Todo({ todo }) {
+export default function Todo({ todo, deleteTodo, resolveTodo }) {
     return (
         <div className="todo">
             <div style={{ display: "flex", alignItems: "center" }}>
-                <input className="checkbox" type="checkbox" />
-                <p>Watch crossroads video</p>
+                <input onChange={() => resolveTodo(todo.id)} className="checkbox" type="checkbox" checked={todo.isDone} />
+                <p className={todo.isDone ? "completed-task" : ""}>{todo.title}</p>
             </div>
-            <button><i class="far fa-trash-alt"></i></button>
+            <button onClick={() => deleteTodo(todo.id)}><i className="far fa-trash-alt"></i></button>
         </div>
     )
 }

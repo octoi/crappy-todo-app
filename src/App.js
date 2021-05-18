@@ -2,20 +2,60 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import Todo from './Todo';
 
+
+
 function App() {
+    const [todo, setTodo] = useState("");
     const [todos, setTodos] = useState([]);
-    const [todo, setTodo] = useState("")
+    const [filter, setFilter] = useState("all");
+    const [isListEmpty, setIsListEmpty] = useState(false);
+
+    const addTodo = () => {
+        const newTodo = {
+            title: todo,
+            isDone: false,
+            id: Date.now()
+        };
+
+        setTodos([...todos, newTodo]);
+        setTodo("")
+    }
+
+    const deleteTodo = (id) => {
+        let newTodos = [];
+        todos.forEach(todoItem => {
+            if (todoItem.id !== id) {
+                newTodos.push(todoItem)
+            }
+        });
+
+        if (newTodos.length === 0) setIsListEmpty(true)
+        setTodos(newTodos)
+    }
+
+    const resolveTodo = (id) => {
+        setTodos(todos.filter(todoItem => {
+            if (todoItem.id === id) {
+                todoItem.isDone = !todoItem.isDone;
+            }
+            return todoItem;
+        }))
+    }
 
     useEffect(() => {
         if (!localStorage) return;
 
-        let todosFromStorage = localStorage.getItem("todos");
-        if (todosFromStorage) setTodos(todos);
-
-        return () => {
-            localStorage.setItem("todos", todos)
+        if (isListEmpty) {
+            localStorage.setItem("todos", JSON.stringify(todos))
+            setIsListEmpty(true)
+        } else {
+            let savedTodos = localStorage.getItem("todos");
+            if (savedTodos && savedTodos.length !== 0) {
+                setTodos(JSON.parse(savedTodos))
+            }
         }
-    }, [todos]);
+    }, [todos])
+
 
     return (
         <div className="App">
@@ -26,17 +66,19 @@ function App() {
                     onChange={(e) => setTodo(e.target.value)}
                     placeholder="To do ??"
                 />
-                <button><i class="fas fa-plus"></i></button>
+                <button onClick={addTodo}><i className="fas fa-plus"></i></button>
             </div>
             <div className="options">
-                <button>All</button>
-                <button>Completed</button>
-                <button>Todo</button>
+                <button className={filter === "all" ? "selected-btn" : ""} onClick={() => setFilter("all")}>All</button>
+                <button className={filter === "done" ? "selected-btn" : ""} onClick={() => setFilter("done")}>Completed</button>
+                <button className={filter === "todo" ? "selected-btn" : ""} onClick={() => setFilter("todo")}>Todo</button>
             </div>
             <div style={{ marginTop: "30px" }}>
-                <Todo />
-                <Todo />
-                <Todo />
+                {todos && todos.map(todo => {
+                    if (filter === "done" && !todo.isDone) return null;
+                    if (filter === "todo" && todo.isDone) return null;
+                    return <Todo todo={todo} key={todo.id} deleteTodo={deleteTodo} resolveTodo={resolveTodo} />
+                })}
             </div>
         </div>
     );
