@@ -6,9 +6,8 @@ import Todo from './Todo';
 
 function App() {
     const [todo, setTodo] = useState("");
-    const [todos, setTodos] = useState([]);
+    const [todos, setTodos] = useState("");
     const [filter, setFilter] = useState("all");
-    const [isListEmpty, setIsListEmpty] = useState(false);
 
     const addTodo = () => {
         const newTodo = {
@@ -23,9 +22,9 @@ function App() {
 
     const deleteTodo = (id) => {
         let newTodos = todos;
-        newTodos.filter(todoItem => todoItem.id !== id);
+        newTodos = newTodos.filter(todoItem => todoItem.id !== id);
 
-        if (newTodos.length === 0) setIsListEmpty(true)
+        // if (newTodos.length === 0) setIsListEmpty(true)
         setTodos(newTodos)
     }
 
@@ -41,16 +40,16 @@ function App() {
     useEffect(() => {
         if (!localStorage) return;
 
-        if (isListEmpty) {
-            localStorage.setItem("todos", JSON.stringify(todos))
-            setIsListEmpty(true)
-        } else {
+        if (todos === "") {
             let savedTodos = localStorage.getItem("todos");
             if (savedTodos && savedTodos.length !== 0) {
                 setTodos(JSON.parse(savedTodos))
             }
+        } else {
+            localStorage.setItem("todos", JSON.stringify(todos))
         }
-    }, [todos, isListEmpty])
+
+    }, [todos]);
 
 
     return (
@@ -70,7 +69,7 @@ function App() {
                 <button className={filter === "todo" ? "selected-btn" : ""} onClick={() => setFilter("todo")}>Todo</button>
             </div>
             <div style={{ marginTop: "30px" }}>
-                {todos && todos.map(todo => {
+                {todos !== "" && todos.map(todo => {
                     if (filter === "done" && !todo.isDone) return null;
                     if (filter === "todo" && todo.isDone) return null;
                     return <Todo todo={todo} key={todo.id} deleteTodo={deleteTodo} resolveTodo={resolveTodo} />
