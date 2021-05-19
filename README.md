@@ -7,7 +7,7 @@ Get A <a href="https://crappy-todo-app.netlify.app/">Demo</a> 😊
 
 Download the project 📂
 ```bash
-git clone https://github.com/your-code-is-my-property/crappy-todo-app.git
+$ git clone https://github.com/your-code-is-my-property/crappy-todo-app.git
 ```
 Install dependencies 🚗
 ```bash
