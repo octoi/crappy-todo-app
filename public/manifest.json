@@ -1,6 +1,6 @@
 {
-  "short_name": "Crappy",
-  "name": "Crappy Todo App",
+  "short_name": "Todo",
+  "name": "Todo App",
   "icons": [
     {
       "src": "favicon.ico",
@@ -10,7 +10,8 @@
     {
       "src": "logo192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any maskable"
     },
     {
       "src": "logo512.png",
