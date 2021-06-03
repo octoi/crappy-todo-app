@@ -5,6 +5,10 @@ body {
     padding: 10px 20px;
 }
 
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
 .App {
     display: flex;
     justify-content: center;
@@ -15,6 +19,7 @@ body {
 
 input {
     background: #272636;
+    width: 60%;
     border: none;
     outline: none;
     padding: 18px;
@@ -46,7 +51,6 @@ input {
     outline: none;
     color: #ffffff;
     font-size: 25px;
-    margin-left: 10px;
     transition: 0.5s;
     cursor: pointer;
     padding: 20px;
@@ -134,7 +138,7 @@ input {
 
 .options button:hover {
     background: #6F6FC8;
-    opacity: 0.5;
+    opacity: 1;
 }
 
 .options .selected-btn {
