@@ -1,7 +1,16 @@
+
+:root {
+    --primary-color: #1F1D2B;
+    --secondary-color: #272636;
+    --text-color: #ffffff;
+    --accent-color: #6F6FC8;
+    --danger-color: #FE4343;
+}
+
 body {
     font-family: sans-serif;
-    background: #1F1D2B;
-    color: #ffffff;
+    background: var(--primary-color);
+    color: var(--text-color);
     padding: 10px 20px;
 }
 
@@ -18,7 +27,7 @@ button {
 }
 
 input {
-    background: #272636;
+    background: var(--secondary-color);
     width: 60%;
     border: none;
     outline: none;
@@ -29,7 +38,7 @@ input {
 }
 
 .input {
-    background: #272636;
+    background: var(--secondary-color);
     border: 2px solid transparent;
     border-radius: 10px;
     transition: 0.5s;
@@ -39,17 +48,17 @@ input {
 }
 
 .input:hover {
-    border: 2px solid #6F6FC8;
+    border: 2px solid var(--accent-color);
 }
 .input:focus {
-    border: 2px solid #6F6FC8;
+    border: 2px solid var(--accent-color);
 }
 
 .input button {
     background: none;
     border: none;
     outline: none;
-    color: #ffffff;
+    color: var(--text-color);
     font-size: 25px;
     transition: 0.5s;
     cursor: pointer;
@@ -62,7 +71,7 @@ input {
 
 .todo {
     width: 500px;
-    background: #272636;
+    background: var(--secondary-color);
     border-radius: 10px;
     border: 2px solid transparent;
     transition: 0.5s;
@@ -83,14 +92,19 @@ input {
     outline: none;
     margin-right: 20px;
     background: none;
-    color: #FE4343;
+    color: var(--danger-color);
     font-size: 20px;
     cursor: pointer;
     opacity: 0.9;
 }
 
 .todo:hover {
-    border: 2px solid #6F6FC8;
+    border: 2px solid var(--accent-color);
+}
+
+.todo-content {
+    display: flex;
+    align-items: center;
 }
 
 @media (max-width: 550px){
@@ -104,9 +118,11 @@ input {
 
 .checkbox {
     margin-left: 20px;
+    width: 10px;
+    height: 10px;
     -webkit-appearance: none;
 	background-color: none;
-	border: 1px solid #6F6FC8;
+	border: 1px solid var(--accent-color);
 	padding: 9px;
 	border-radius: 3px;
 	display: inline-block;
@@ -115,7 +131,7 @@ input {
 }
 
 .checkbox:checked{
-    background-color: #6F6FC8;
+    background-color: var(--accent-color);
 }
 
 .options {
@@ -127,9 +143,9 @@ input {
     outline: none;
     padding: 10px 20px;
     margin: 5px;
-    border: 2px solid #6F6FC8;
+    border: 2px solid var(--accent-color);
     background: none;
-    color: #ffffff;
+    color: var(--text-color);
     border-radius: 10px;
     cursor: pointer;
     font-size: 20px;
@@ -137,14 +153,25 @@ input {
 }
 
 .options button:hover {
-    background: #6F6FC8;
+    background: var(--accent-color);
     opacity: 1;
 }
 
 .options .selected-btn {
-    background: #6F6FC8;
+    background: var(--accent-color);
 }
 
 .completed-task {
     text-decoration: line-through;
+}
+
+.error-message {
+    color: var(--danger-color);
+    text-align: center;
+    opacity: 0.8;
+}
+
+.fall {
+    transform: translateY(10rem) rotateZ(20deg);
+    opacity: 0;
 }

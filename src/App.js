@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import Todo from './Todo';
 
-
-
 function App() {
     const [todo, setTodo] = useState("");
     const [todos, setTodos] = useState("");
@@ -18,7 +16,7 @@ function App() {
                 isDone: false,
                 id: Date.now()
             };
-            
+
             setTodos(todos => [...todos, newTodo]);
             setTodo("")
         } else {
@@ -29,8 +27,6 @@ function App() {
     const deleteTodo = (id) => {
         let newTodos = todos;
         newTodos = newTodos.filter(todoItem => todoItem.id !== id);
-
-        // if (newTodos.length === 0) setIsListEmpty(true)
         setTodos(newTodos)
     }
 
@@ -62,19 +58,19 @@ function App() {
         <div className="App">
             <h1>Todo App</h1>
             <form>
-            <div className="input">
-                <input
-                    value={todo}
-                    onChange={(e) => {
-                        setTodo(e.target.value);
-                        if (e.target.value) setError(false);
-                    }}
-                    placeholder="To do ??"
-                    autoFocus
-                />
-                <button type="submit" onClick={addTodo}><i className="fas fa-plus"></i></button>
-            </div>
-            { error && <p className="error-message">Oops! Todo cannot be blank</p> }
+                <div className="input">
+                    <input
+                        value={todo}
+                        onChange={(e) => {
+                            setTodo(e.target.value);
+                            if (e.target.value) setError(false);
+                        }}
+                        placeholder="To do ??"
+                        autoFocus
+                    />
+                    <button type="submit" onClick={addTodo}><i className="fas fa-plus"></i></button>
+                </div>
+                {error && <p className="error-message">Oops! Todo cannot be blank</p>}
             </form>
             <div className="options">
                 <button className={filter === "all" ? "selected-btn" : ""} onClick={() => setFilter("all")}>All</button>

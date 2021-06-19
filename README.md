@@ -1,28 +1,54 @@
-# Todo App 📝
-Organize your life if you have one 😅
+<p align="center">
+  	<a href="https://crappy-todo-app.netlify.app/" target="_blank">
+    	<img src="public/logo192.png" alt="Logo">
+  	</a>
+</p>
 
-Get A <a href="https://crappy-todo-app.netlify.app/">Demo</a> 😊
+<h1 align="center">TODO APP</h1>
 
-## Setup 👷‍♂️
+<p align="center">
+    A crappy todo app made using React 🌟 <br>
+    <b><a href="https://crappy-todo-app.netlify.app/">View Demo 👀</a></b><br>
+    <a href="https://github.com/your-code-is-my-property/crappy-todo-app">Code</a> · 
+    <a href="https://github.com/your-code-is-my-property/crappy-todo-app/issues">Report Bug</a> ·
+    <a href="https://github.com/your-code-is-my-property/crappy-todo-app/pulls">Contribute</a>
+</p>
 
-Download the project 📂
+<br />
+
+## SETUP 👷‍♂️
+
+> You need <b><a href="https://nodejs.org/en/">NODE JS</a> & <a href="https://www.npmjs.com/">NPM</a></b> to get started
+
+<b><u>DOWNLOAD PROJECT</u></b>
+
+<a href="https://github.com/your-code-is-my-property/crappy-todo-app/archive/refs/heads/main.zip">Download zip 🤐</a>
+
+or clone the repo
+
 ```bash
 $ git clone https://github.com/your-code-is-my-property/crappy-todo-app.git
 ```
-Install dependencies 🚗
+
+<b><u>INSTALL DEPENDENCIES</u></b>
+
 ```bash
 $ npm install
-## Or yarn
+# Or yarn
 $ yarn install
 ```
-Start development server 🌟
+
+<b><u>START SERVER</u></b>
+
 ```bash
 $ npm start
-## Or yarn
+# Or yarn
 $ yarn start
 ```
 
-## Links 🔗
+## CONTRIBUTERS ✨️
 
-- <a href="https://crappy-todo-app.netlify.app/">Project Demo 📂</a>
-- <a href="https://youtu.be/dQw4w9WgXcQ">Don't click this link 🚫</a>
+<a href="https://github.com/nahal04">__@nahal04__</a> <br>
+
+<a href="https://github.com/fadhilsaheer">__@fadhilsaheer__</a> 
+
