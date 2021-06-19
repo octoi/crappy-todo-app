@@ -14,8 +14,7 @@
     <a href="https://github.com/your-code-is-my-property/crappy-todo-app/pulls">Contribute</a>
 </p>
 
----
-
+<br>
 ## SETUP 👷‍♂️
 
 > You need <b><a href="https://nodejs.org/en/">NODE JS</a> & <a href="https://www.npmjs.com/">NPM</a></b> to get started
