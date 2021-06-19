@@ -98,7 +98,6 @@ input {
     align-items: center;
 }
 
-
 @media (max-width: 550px){
     .input {
         width: 90vw;
@@ -110,6 +109,8 @@ input {
 
 .checkbox {
     margin-left: 20px;
+    width: 10px;
+    height: 10px;
     -webkit-appearance: none;
 	background-color: none;
 	border: 1px solid #6F6FC8;
