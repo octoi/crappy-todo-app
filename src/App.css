@@ -164,3 +164,9 @@ input {
 .completed-task {
     text-decoration: line-through;
 }
+
+.error-message {
+    color: var(--danger-color);
+    text-align: center;
+    opacity: 0.8;
+}
