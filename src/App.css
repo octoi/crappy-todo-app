@@ -93,6 +93,12 @@ input {
     border: 2px solid #6F6FC8;
 }
 
+.todo-content {
+    display: flex;
+    align-items: center;
+}
+
+
 @media (max-width: 550px){
     .input {
         width: 90vw;
