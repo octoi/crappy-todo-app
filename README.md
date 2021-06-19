@@ -2,7 +2,7 @@
   	<a href="https://crappy-todo-app.netlify.app/" target="_blank">
     	<img src="public/logo192.png" alt="Logo">
   	</a>
-    <h1><center>TODO APP</center></h1>
+    <h1>TODO APP</h1>
     A crappy todo app made using React 🌟 <br>
     <b><a href="https://crappy-todo-app.netlify.app/">View Demo 👀</a></b><br>
     <a href="https://github.com/your-code-is-my-property/crappy-todo-app">Code</a> · 
