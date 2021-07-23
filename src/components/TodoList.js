@@ -29,7 +29,11 @@ export default function TodoList({ todoItems, setTodoItems, todoHelper, filter }
                             if (filter === "todo" && todo.isDone) return null;
                             return (
                                 <Draggable key={idx} draggableId={`item-${idx}`} index={idx}>
-                                    {(provided) => <li {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
+                                    {(provided) => <li
+                                        {...provided.draggableProps}
+                                        {...provided.dragHandleProps}
+                                        ref={provided.innerRef}
+                                    >
                                         <Todo
                                             todo={todo}
                                             key={todo.id}
