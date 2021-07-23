@@ -1,27 +1,20 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import Todo from './components/Todo';
+import TodoInput from './components/TodoInput';
 
 function App() {
-    const [todo, setTodo] = useState("");
     const [todos, setTodos] = useState("");
     const [filter, setFilter] = useState("all");
-    const [error, setError] = useState(false);
 
-    const addTodo = (e) => {
-        e.preventDefault();
-        if (todo) {
-            const newTodo = {
-                title: todo,
-                isDone: false,
-                id: Date.now()
-            };
+    const addTodo = (todo) => {
+        const newTodo = {
+            title: todo,
+            isDone: false,
+            id: Date.now()
+        };
 
-            setTodos(todos => [...todos, newTodo]);
-            setTodo("")
-        } else {
-            setError(true);
-        }
+        setTodos(todos => [...todos, newTodo]);
     }
 
     const deleteTodo = (id) => {
@@ -57,21 +50,7 @@ function App() {
     return (
         <div className="App">
             <h1>Todo App</h1>
-            <form>
-                <div className="input">
-                    <input
-                        value={todo}
-                        onChange={(e) => {
-                            setTodo(e.target.value);
-                            if (e.target.value) setError(false);
-                        }}
-                        placeholder="To do ??"
-                        autoFocus
-                    />
-                    <button type="submit" onClick={addTodo}><i className="fas fa-plus"></i></button>
-                </div>
-                {error && <p className="error-message">Oops! Todo cannot be blank</p>}
-            </form>
+            <TodoInput addTodo={addTodo} />
             <div className="options">
                 <button className={filter === "all" ? "selected-btn" : ""} onClick={() => setFilter("all")}>All</button>
                 <button className={filter === "done" ? "selected-btn" : ""} onClick={() => setFilter("done")}>Completed</button>
