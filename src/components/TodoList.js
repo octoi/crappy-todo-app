@@ -1,10 +1,25 @@
-import React from 'react';
-import Todo from './Todo';
+import React, { useState, useEffect } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import Todo from './Todo';
 
-export default function TodoList({ todos, todoHelper, filter }) {
+export default function TodoList({ todoItems, setTodoItems, todoHelper, filter }) {
+    const [todos, setTodos] = useState(todoItems || []);
+
+    useEffect(() => {
+        setTodos(todoItems)
+    }, [todoItems])
+
+    const handleOnDragEnd = (result) => {
+        const items = Array.from(todos);
+        const [reorderedItem] = items.splice(result.source.index, 1);
+        items.splice(result.destination.index, 0, reorderedItem);
+
+        setTodos(items);
+        setTodoItems(items);
+    }
+
     return (
-        <DragDropContext>
+        <DragDropContext onDragEnd={handleOnDragEnd}>
             <Droppable droppableId="todos">
                 {(provided) => (
                     <ul style={{ marginTop: "30px" }} {...provided.droppableProps} ref={provided.innerRef}>
