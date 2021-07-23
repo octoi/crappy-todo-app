@@ -23,7 +23,7 @@ export default function TodoList({ todoItems, setTodoItems, todoHelper, filter }
         <DragDropContext onDragEnd={handleOnDragEnd}>
             <Droppable droppableId="todos">
                 {(provided) => (
-                    <ul style={{ marginTop: "30px" }} {...provided.droppableProps} ref={provided.innerRef}>
+                    <ul {...provided.droppableProps} ref={provided.innerRef}>
                         {todos !== "" && todos.map((todo, idx) => {
                             if (filter === "done" && !todo.isDone) return null;
                             if (filter === "todo" && todo.isDone) return null;
