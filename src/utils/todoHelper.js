@@ -27,6 +27,15 @@ class TodoHelper {
             return todoItem;
         }))
     }
+
+    editTodo(allTodos, id, title) {
+        this.setTodos(allTodos.filter(todoItem => {
+            if (todoItem.id === id) {
+                todoItem.title = title;
+            }
+            return todoItem;
+        }))
+    }
 }
 
 export default TodoHelper;

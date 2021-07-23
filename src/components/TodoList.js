@@ -39,6 +39,7 @@ export default function TodoList({ todoItems, setTodoItems, todoHelper, filter }
                                             key={todo.id}
                                             deleteTodo={() => todoHelper.deleteTodo(todos, todo.id)}
                                             resolveTodo={() => todoHelper.resolveTodo(todos, todo.id)}
+                                            editTodo={(title) => todoHelper.editTodo(todos, todo.id, title)}
                                         />
                                     </li>}
                                 </Draggable>
