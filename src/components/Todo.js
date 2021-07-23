@@ -11,14 +11,14 @@ export default function Todo({ todo, deleteTodo, resolveTodo }) {
 
         todoRef.current.classList.add('fall'); // fall animation
         setTimeout(() => { // fall animation needs at least 1 sec 
-            deleteTodo(todo.id);
+            deleteTodo();
         }, 1000)
     }
 
     return (
         <div className="todo" ref={todoRef}>
             <div className="todo-content">
-                <input onChange={() => resolveTodo(todo.id)} className="checkbox" type="checkbox" checked={todo.isDone} />
+                <input onChange={() => resolveTodo()} className="checkbox" type="checkbox" checked={todo.isDone} />
                 <p className={todo.isDone ? "completed-task" : ""}>{todo.title}</p>
             </div>
             <button onClick={askToDeleteTodo}><i className="far fa-trash-alt"></i></button>
