@@ -37,12 +37,8 @@ button {
     justify-content: space-between;
 }
 
-.input:hover {
-    border: 2px solid var(--accent-color);
-}
-.input:focus {
-    border: 2px solid var(--accent-color);
-}
+.input:hover { border: 2px solid var(--accent-color); }
+.input:focus { border: 2px solid var(--accent-color); }
 
 .input input {
     background: var(--secondary-color);
