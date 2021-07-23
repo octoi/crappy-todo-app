@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-export default function Todo({ todo, deleteTodo, resolveTodo }) {
+export default function Todo({ todo, deleteTodo, resolveTodo, editTodo }) {
     const todoRef = useRef();
 
     const askToDeleteTodo = () => {
@@ -15,8 +15,17 @@ export default function Todo({ todo, deleteTodo, resolveTodo }) {
         }, 1000)
     }
 
+    const handleDoubleClick = () => {
+        if (window.prompt) {
+            const edited = prompt("Edit todo", todo.title);
+            if (edited) {
+                editTodo(edited);
+            }
+        }
+    }
+
     return (
-        <div className="todo" ref={todoRef}>
+        <div onDoubleClick={handleDoubleClick} className="todo" ref={todoRef}>
             <div className="todo-content">
                 <input onChange={() => resolveTodo()} className="checkbox" type="checkbox" checked={todo.isDone} />
                 <p className={todo.isDone ? "completed-task" : ""}>{todo.title}</p>
