@@ -31,7 +31,7 @@ function App() {
             <h1>Todo App</h1>
             <TodoInput addTodo={(todo) => todoHelper.addTodo(todo)} />
             <TodoOptions filter={filter} setFilter={setFilter} />
-            <TodoList todos={todos} filter={filter} todoHelper={todoHelper} />
+            <TodoList todoItems={todos} setTodoItems={setTodos} filter={filter} todoHelper={todoHelper} />
         </div>
     );
 }
