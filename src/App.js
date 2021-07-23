@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './App.css';
 import Todo from './components/Todo';
 import TodoInput from './components/TodoInput';
@@ -7,6 +7,8 @@ import TodoHelper from './utils/todoHelper';
 function App() {
     const [todos, setTodos] = useState("");
     const [filter, setFilter] = useState("all");
+
+    const allTodosRef = useRef();
 
     const todoHelper = new TodoHelper(setTodos);
 
@@ -34,7 +36,7 @@ function App() {
                 <button className={filter === "done" ? "selected-btn" : ""} onClick={() => setFilter("done")}>Completed</button>
                 <button className={filter === "todo" ? "selected-btn" : ""} onClick={() => setFilter("todo")}>Todo</button>
             </div>
-            <div style={{ marginTop: "30px" }}>
+            <div ref={allTodosRef} style={{ marginTop: "30px" }}>
                 {todos !== "" && todos.map(todo => {
                     if (filter === "done" && !todo.isDone) return null;
                     if (filter === "todo" && todo.isDone) return null;
