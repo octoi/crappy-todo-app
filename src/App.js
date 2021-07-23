@@ -1,14 +1,14 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import Todo from './components/Todo';
 import TodoInput from './components/TodoInput';
 import TodoHelper from './utils/todoHelper';
+import { DragDropContext, Draggable } from 'react-beautiful-dnd';
+import TodoOptions from './components/TodoOptions';
 
 function App() {
     const [todos, setTodos] = useState("");
     const [filter, setFilter] = useState("all");
-
-    const allTodosRef = useRef();
 
     const todoHelper = new TodoHelper(setTodos);
 
@@ -31,12 +31,8 @@ function App() {
         <div className="App">
             <h1>Todo App</h1>
             <TodoInput addTodo={(todo) => todoHelper.addTodo(todo)} />
-            <div className="options">
-                <button className={filter === "all" ? "selected-btn" : ""} onClick={() => setFilter("all")}>All</button>
-                <button className={filter === "done" ? "selected-btn" : ""} onClick={() => setFilter("done")}>Completed</button>
-                <button className={filter === "todo" ? "selected-btn" : ""} onClick={() => setFilter("todo")}>Todo</button>
-            </div>
-            <div ref={allTodosRef} style={{ marginTop: "30px" }}>
+            <TodoOptions filter={filter} setFilter={setFilter} />
+            <div style={{ marginTop: "30px" }}>
                 {todos !== "" && todos.map(todo => {
                     if (filter === "done" && !todo.isDone) return null;
                     if (filter === "todo" && todo.isDone) return null;
