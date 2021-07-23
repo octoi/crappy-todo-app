@@ -18,6 +18,10 @@ button {
     -webkit-tap-highlight-color: transparent;
 }
 
+li {
+    list-style: none;
+}
+
 .App {
     display: flex;
     justify-content: center;
