@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/crappy-todo-app/static/css/main.a27381af.chunk.css",
+    "main.js": "/crappy-todo-app/static/js/main.ead109e4.chunk.js",
+    "main.js.map": "/crappy-todo-app/static/js/main.ead109e4.chunk.js.map",
+    "runtime-main.js": "/crappy-todo-app/static/js/runtime-main.7f6a1037.js",
+    "runtime-main.js.map": "/crappy-todo-app/static/js/runtime-main.7f6a1037.js.map",
+    "static/js/2.94c8622d.chunk.js": "/crappy-todo-app/static/js/2.94c8622d.chunk.js",
+    "static/js/2.94c8622d.chunk.js.map": "/crappy-todo-app/static/js/2.94c8622d.chunk.js.map",
+    "index.html": "/crappy-todo-app/index.html",
+    "static/css/main.a27381af.chunk.css.map": "/crappy-todo-app/static/css/main.a27381af.chunk.css.map",
+    "static/js/2.94c8622d.chunk.js.LICENSE.txt": "/crappy-todo-app/static/js/2.94c8622d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7f6a1037.js",
+    "static/js/2.94c8622d.chunk.js",
+    "static/css/main.a27381af.chunk.css",
+    "static/js/main.ead109e4.chunk.js"
+  ]
+}
