@@ -88,6 +88,7 @@ li {
     margin-top: 10px;
 }
 
+
 .todo p {
     font-size: 20px;
     cursor: pointer;
@@ -147,6 +148,24 @@ li {
 
 .checkbox:checked{
     background-color: var(--accent-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checked-btn {
+    margin-left: 20px;
+    margin-right: 7px;
+    margin-top: 2px;
+}
+
+.todo-fill {
+    background: var(--accent-color);
+    color: var(--secondary-color) !important;
+}
+
+.todo-fill button {
+    color: var(--secondary-color);
 }
 
 .options {
