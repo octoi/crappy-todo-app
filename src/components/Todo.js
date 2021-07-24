@@ -25,9 +25,12 @@ export default function Todo({ todo, deleteTodo, resolveTodo, editTodo }) {
     }
 
     return (
-        <div className="todo" ref={todoRef}>
+        <div className={`todo ${todo.isDone ? 'todo-fill' : ''}`} ref={todoRef}>
             <div className="todo-content">
-                <input onChange={() => resolveTodo()} className="checkbox" type="checkbox" checked={todo.isDone} />
+                {todo.isDone && <div onClick={resolveTodo} className="checked-btn">
+                    <i class="fas fa-check"></i>
+                </div>}
+                {!todo.isDone && <input onChange={() => resolveTodo()} className="checkbox" type="checkbox" checked={todo.isDone} />}
                 <p className={todo.isDone ? "completed-task" : ""}>{todo.title}</p>
             </div>
             <div>
