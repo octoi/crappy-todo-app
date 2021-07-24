@@ -97,12 +97,20 @@ li {
 .todo button {
     border: none;
     outline: none;
-    margin-right: 20px;
     background: none;
-    color: var(--danger-color);
     font-size: 20px;
     cursor: pointer;
     opacity: 0.9;
+}
+
+.todo-delete {
+    color: var(--danger-color);
+    margin-right: 1px;
+}
+
+.todo-edit {
+    color: var(--accent-color);
+    margin-right: 20px;
 }
 
 .todo:hover {
@@ -182,3 +190,4 @@ li {
     transform: translateY(10rem) rotateZ(20deg);
     opacity: 0;
 }
+

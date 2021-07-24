@@ -15,7 +15,7 @@ export default function Todo({ todo, deleteTodo, resolveTodo, editTodo }) {
         }, 1000)
     }
 
-    const handleDoubleClick = () => {
+    const handleEdit = () => {
         if (window.prompt) {
             const edited = prompt("Edit todo", todo.title);
             if (edited) {
@@ -25,12 +25,15 @@ export default function Todo({ todo, deleteTodo, resolveTodo, editTodo }) {
     }
 
     return (
-        <div onDoubleClick={handleDoubleClick} className="todo" ref={todoRef}>
+        <div className="todo" ref={todoRef}>
             <div className="todo-content">
                 <input onChange={() => resolveTodo()} className="checkbox" type="checkbox" checked={todo.isDone} />
                 <p className={todo.isDone ? "completed-task" : ""}>{todo.title}</p>
             </div>
-            <button onClick={askToDeleteTodo}><i className="far fa-trash-alt"></i></button>
+            <div>
+                <button className="todo-delete" onClick={askToDeleteTodo}><i className="far fa-trash-alt"></i></button>
+                <button className="todo-edit" onClick={handleEdit}><i className="far fa-edit"></i></button>
+            </div>
         </div>
     )
 }
