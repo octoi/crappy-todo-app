@@ -8,10 +8,10 @@
 
 <p align="center">
     A crappy todo app made using React 🌟 <br>
-    <b><a href="https://your-code-is-my-property.github.io/crappy-todo-app/">View Demo 👀</a></b><br>
-    <a href="https://github.com/your-code-is-my-property/crappy-todo-app">Code</a> · 
-    <a href="https://github.com/your-code-is-my-property/crappy-todo-app/issues">Report Bug</a> ·
-    <a href="https://github.com/your-code-is-my-property/crappy-todo-app/pulls">Contribute</a>
+    <b><a href="https://octoi.github.io/crappy-todo-app/">View Demo 👀</a></b><br>
+    <a href="https://github.com/octoi/crappy-todo-app">Code</a> · 
+    <a href="https://github.com/octoi/crappy-todo-app/issues">Report Bug</a> ·
+    <a href="https://github.com/octoi/crappy-todo-app/pulls">Contribute</a>
 </p>
 
 <br />
@@ -22,7 +22,7 @@
 
 <b><u>DOWNLOAD PROJECT</u></b>
 
-<a href="https://github.com/your-code-is-my-property/crappy-todo-app/archive/refs/heads/main.zip">Download zip 🤐</a>
+<a href="https://github.com/octoi/crappy-todo-app/archive/refs/heads/main.zip">Download zip 🤐</a>
 
 or clone the repo
 
