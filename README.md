@@ -1,5 +1,5 @@
 <p align="center">
-  	<a href="https://your-code-is-my-property.github.io/crappy-todo-app/" target="_blank">
+  	<a href="https://octoi.github.io/crappy-todo-app/" target="_blank">
     	<img src="public/logo192.png" alt="Logo">
   	</a>
 </p>
@@ -27,7 +27,7 @@
 or clone the repo
 
 ```bash
-$ git clone https://github.com/your-code-is-my-property/crappy-todo-app.git
+$ git clone https://github.com/octoi/crappy-todo-app.git
 ```
 
 <b><u>INSTALL DEPENDENCIES</u></b>
