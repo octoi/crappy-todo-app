@@ -3,6 +3,7 @@
   --secondary-color: #272636;
   --text-color: #ffffff;
   --accent-color: #6f6fc8;
+  --accent-accent-color: #6464cc;
   --danger-color: #fe4343;
   --danger-accent-color: #fc6060;
 }
@@ -224,4 +225,21 @@ li {
 .fall {
   transform: translateY(10rem) rotateZ(20deg);
   opacity: 0;
+}
+
+.dialogue-input {
+  background: var(--secondary-color);
+  border: none;
+  outline: none;
+  padding: 20px;
+  font-size: 20px;
+  color: #ffffff;
+  width: 91%;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.dialogue-input:focus {
+  border: 2px solid var(--accent-color);
 }
