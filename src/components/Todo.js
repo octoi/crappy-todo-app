@@ -1,13 +1,20 @@
 import { useRef } from 'react';
 import { useDisclosure } from '@chakra-ui/react';
 import DeleteDialogue from './DeleteDialogue';
+import EditTodoDialogue from './EditTodoDialogue';
 
 export default function Todo({ todo, deleteTodo, resolveTodo, editTodo }) {
   const todoRef = useRef();
+
   const {
     onOpen: deleteOnOpen,
     isOpen: deleteIsOpen,
     onClose: deleteOnClose,
+  } = useDisclosure();
+  const {
+    onOpen: editOnOpen,
+    isOpen: editIsOpen,
+    onClose: editOnClose,
   } = useDisclosure();
 
   const handleDeleteTodo = () => {
@@ -17,15 +24,6 @@ export default function Todo({ todo, deleteTodo, resolveTodo, editTodo }) {
       // fall animation needs at least 1 sec
       deleteTodo();
     }, 1000);
-  };
-
-  const handleEdit = () => {
-    if (window.prompt) {
-      const edited = prompt('Edit todo', todo.title);
-      if (edited) {
-        editTodo(edited);
-      }
-    }
   };
 
   return (
@@ -51,7 +49,7 @@ export default function Todo({ todo, deleteTodo, resolveTodo, editTodo }) {
           <button className='todo-delete' onClick={deleteOnOpen}>
             <i className='far fa-trash-alt'></i>
           </button>
-          <button className='todo-edit' onClick={handleEdit}>
+          <button className='todo-edit' onClick={editOnOpen}>
             <i className='far fa-edit'></i>
           </button>
         </div>
@@ -62,6 +60,12 @@ export default function Todo({ todo, deleteTodo, resolveTodo, editTodo }) {
         isOpen={deleteIsOpen}
         onClose={deleteOnClose}
         handleDeleteTodo={handleDeleteTodo}
+      />
+      <EditTodoDialogue
+        isOpen={editIsOpen}
+        onClose={editOnClose}
+        editTodo={editTodo}
+        todoValue={todo.title}
       />
     </>
   );
