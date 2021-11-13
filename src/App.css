@@ -1,212 +1,228 @@
-
 :root {
-    --primary-color: #1F1D2B;
-    --secondary-color: #272636;
-    --text-color: #ffffff;
-    --accent-color: #6F6FC8;
-    --danger-color: #FE4343;
+  --primary-color: #1f1d2b;
+  --secondary-color: #272636;
+  --text-color: #ffffff;
+  --accent-color: #6f6fc8;
+  --danger-color: #fe4343;
 }
 
 body {
-    font-family: sans-serif;
-    background: var(--primary-color);
-    color: var(--text-color);
-    padding: 10px 20px;
+  font-family: sans-serif;
+  background: var(--primary-color);
+  color: var(--text-color);
+  padding: 10px 20px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--primary-color);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: var(--secondary-color);
 }
 
 button {
-    -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
 ul {
-    padding: 0;
-    margin-top: 30px;
+  padding: 0;
+  margin-top: 30px;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 .App {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
 }
-
 
 .input {
-    background: var(--secondary-color);
-    border: 2px solid transparent;
-    border-radius: 10px;
-    transition: 0.5s;
-    width: 500px;
-    display: flex;
-    justify-content: space-between;
+  background: var(--secondary-color);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: 0.5s;
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.input:hover { border: 2px solid var(--accent-color); }
-.input:focus { border: 2px solid var(--accent-color); }
+.input:hover {
+  border: 2px solid var(--accent-color);
+}
+.input:focus {
+  border: 2px solid var(--accent-color);
+}
 
 .input input {
-    background: var(--secondary-color);
-    width: 60%;
-    border: none;
-    outline: none;
-    padding: 18px 0px 18px 18px;
-    margin: 2px;
-    font-size: 20px;
-    color: #ffffff;
-    flex-grow: 1;
+  background: var(--secondary-color);
+  width: 60%;
+  border: none;
+  outline: none;
+  padding: 18px 0px 18px 18px;
+  margin: 2px;
+  font-size: 20px;
+  color: #ffffff;
+  flex-grow: 1;
 }
 
 .input button {
-    background: none;
-    border: none;
-    outline: none;
-    color: var(--text-color);
-    font-size: 25px;
-    transition: 0.5s;
-    cursor: pointer;
-    padding: 20px;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text-color);
+  font-size: 25px;
+  transition: 0.5s;
+  cursor: pointer;
+  padding: 20px;
 }
 
 .input button:hover {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .todo {
-    width: 500px;
-    background: var(--secondary-color);
-    border-radius: 10px;
-    border: 2px solid transparent;
-    transition: 0.5s;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
+  width: 500px;
+  background: var(--secondary-color);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transition: 0.5s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
 }
 
-
 .todo p {
-    font-size: 20px;
-    cursor: pointer;
-    padding: 5px 10px;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px 10px;
 }
 
 .todo button {
-    border: none;
-    outline: none;
-    background: none;
-    font-size: 20px;
-    cursor: pointer;
-    opacity: 0.9;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0.9;
 }
 
 .todo-delete {
-    color: var(--danger-color);
-    margin-right: 1px;
+  color: var(--danger-color);
+  margin-right: 1px;
 }
 
 .todo-edit {
-    color: var(--accent-color);
-    margin-right: 20px;
+  color: var(--accent-color);
+  margin-right: 20px;
 }
 
 .todo:hover {
-    border: 2px solid var(--accent-color);
+  border: 2px solid var(--accent-color);
 }
 
 .todo-content {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
-@media (max-width: 550px){
-    .input {
-        width: 90vw;
-    }
-    .todo{
-        width: 90vw;
-    }
+@media (max-width: 550px) {
+  .input {
+    width: 90vw;
+  }
+  .todo {
+    width: 90vw;
+  }
 }
 
 .checkbox {
-    margin-left: 20px;
-    width: 10px;
-    height: 10px;
-    -webkit-appearance: none;
-	background-color: none;
-	border: 1px solid var(--accent-color);
-	padding: 9px;
-	border-radius: 3px;
-	display: inline-block;
-	position: relative;
-    overflow: none;
+  margin-left: 20px;
+  width: 10px;
+  height: 10px;
+  -webkit-appearance: none;
+  background-color: none;
+  border: 1px solid var(--accent-color);
+  padding: 9px;
+  border-radius: 3px;
+  display: inline-block;
+  position: relative;
+  overflow: none;
 }
 
-.checkbox:checked{
-    background-color: var(--accent-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.checkbox:checked {
+  background-color: var(--accent-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .checked-btn {
-    margin-left: 20px;
-    margin-right: 7px;
-    margin-top: 2px;
+  margin-left: 20px;
+  margin-right: 7px;
+  margin-top: 2px;
 }
 
 .todo-fill {
-    background: var(--accent-color);
-    color: var(--secondary-color) !important;
+  background: var(--accent-color);
+  color: var(--secondary-color) !important;
 }
 
 .todo-fill button {
-    color: var(--secondary-color);
+  color: var(--secondary-color);
 }
 
 .options {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 .options button {
-    border: none;
-    outline: none;
-    padding: 10px 20px;
-    margin: 5px;
-    border: 2px solid var(--accent-color);
-    background: none;
-    color: var(--text-color);
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 20px;
-    transition: 0.5s;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border: 2px solid var(--accent-color);
+  background: none;
+  color: var(--text-color);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.5s;
 }
 
 .options button:hover {
-    background: var(--accent-color);
-    opacity: 1;
+  background: var(--accent-color);
+  opacity: 1;
 }
 
 .options .selected-btn {
-    background: var(--accent-color);
+  background: var(--accent-color);
 }
 
 .completed-task {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 .error-message {
-    color: var(--danger-color);
-    text-align: center;
-    opacity: 0.8;
+  color: var(--danger-color);
+  text-align: center;
+  opacity: 0.8;
 }
 
 .fall {
-    transform: translateY(10rem) rotateZ(20deg);
-    opacity: 0;
+  transform: translateY(10rem) rotateZ(20deg);
+  opacity: 0;
 }
-
