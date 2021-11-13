@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
 import './App.css';
+import { useState, useEffect } from 'react';
+import { Flex } from '@chakra-ui/react';
 import TodoInput from './components/TodoInput';
 import TodoHelper from './utils/todoHelper';
 import TodoOptions from './components/TodoOptions';
@@ -26,15 +27,22 @@ function App() {
 
   return (
     <div className='App'>
-      <h1>Todo App</h1>
-      <TodoInput addTodo={(todo) => todoHelper.addTodo(todo)} />
-      <TodoOptions filter={filter} setFilter={setFilter} />
-      <TodoList
-        todoItems={todos}
-        setTodoItems={setTodos}
-        filter={filter}
-        todoHelper={todoHelper}
-      />
+      <Flex
+        direction='column'
+        justifyContent='center'
+        alignItems='center'
+        mt={20}
+      >
+        <h1>Todo App</h1>
+        <TodoInput addTodo={(todo) => todoHelper.addTodo(todo)} />
+        <TodoOptions filter={filter} setFilter={setFilter} />
+        <TodoList
+          todoItems={todos}
+          setTodoItems={setTodos}
+          filter={filter}
+          todoHelper={todoHelper}
+        />
+      </Flex>
     </div>
   );
 }
