@@ -7,10 +7,10 @@
 }
 
 body {
-  font-family: sans-serif;
-  background: var(--primary-color);
-  color: var(--text-color);
-  padding: 10px 20px;
+  font-family: sans-serif !important;
+  background: var(--primary-color) !important;
+  color: var(--text-color) !important;
+  padding: 10px 20px !important;
 }
 
 ::-webkit-scrollbar {
